@@ -28,6 +28,12 @@ The features proposed in the design documents are:
 
 - The all caracters page (`/characters`) can filter by `name` and/or `status`
 
+### SUPER BONUS
+
+- The characters can be favourited. Favourited characters ids are stored in localStorage
+  - Visually this could be implemented with something like a "bookmark" or "like" toggle.
+- There is a "Favourites" page that fetches and renders only the favourites characters.
+
 ## Tips
 
 - Look at the wireframes and plan your approach. Smaller tasks are easier to finish

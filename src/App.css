@@ -8,4 +8,37 @@
 
 .App {
   height: 100vh;
+  display: grid;
+  grid-template-rows: 75px auto 75px;
+  background-color: #04b1c5;
+}
+
+.home__img {
+  width: 90vw;
+}
+
+.character__liItem {
+  border: 2px solid black;
+  padding: 5%;
+  width: fit-content;
+  margin: auto;
+  list-style: none;
+  background-color: wheat;
+}
+.character__liItem img {
+  width: 50vw;
+}
+
+.character__liItem p {
+  word-wrap: break-word;
+}
+
+.alive {
+  color: green;
+}
+.dead {
+  color: red;
+}
+.unknown {
+  color: orange;
 }

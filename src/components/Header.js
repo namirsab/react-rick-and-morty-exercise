@@ -10,6 +10,9 @@ export default function Header() {
         <NavLink to="/characters">
           <h2>Characters</h2>
         </NavLink>
+        <NavLink to="/favourites">
+          <h2>Favourites</h2>
+        </NavLink>
       </nav>
     </header>
   );

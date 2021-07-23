@@ -3,6 +3,7 @@
   width: 100vw;
   padding: 5%;
   text-align: center;
+  height: fit-content;
 }
 
 .header__nav a {

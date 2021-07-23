@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import SingleCharacter from "../pages/SingleCharacter";
 import { Switch, Route } from "react-router-dom";
 import "./Main.css";
+import Favourites from "../pages/Favourites";
 
 export default function Main() {
   return (
@@ -13,6 +14,9 @@ export default function Main() {
         </Route>
         <Route path="/characters">
           <Characters />
+        </Route>
+        <Route path="/favourites">
+          <Favourites />
         </Route>
         <Route path="/">
           <Home />

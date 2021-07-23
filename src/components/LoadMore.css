@@ -1,3 +1,7 @@
 .app__load-more {
   text-align: center;
 }
+
+.app__load-more--button {
+  padding: 5px 25px 5px 25px;
+}

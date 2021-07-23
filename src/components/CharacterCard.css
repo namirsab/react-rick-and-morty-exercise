@@ -1,6 +1,7 @@
 .app__character-card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 100px;
+  justify-content: space-evenly;
+  padding: 15px;
+  gap: 1rem;
 }

@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
+
 export default function Characters() {
+  const [filter, setFilter] = useState("");
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState();
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const url = `https://rickandmortyapi.com/api/character/?page=${page}`;
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${filter}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -25,37 +27,43 @@ export default function Characters() {
   }
 
   function renderCharacters() {
-    return characters.map((char) => {
-      const { name, status, species, gender, origin, image, id } = char;
-      return (
-        <li key={id} className="character__liItem">
-          <Link className="li__Link" to={`/characters/${id}`}>
-            <img src={image} alt={`${name} avatar`} />
+    return characters
+      .filter((name) => name.name.toLowerCase().includes(filter.toLowerCase()))
+      .map((char) => {
+        const { name, status, species, gender, origin, image, id } = char;
+        return (
+          <li key={id} className="character__liItem">
+            <Link className="li__Link" to={`/characters/${id}`}>
+              <img src={image} alt={`${name} avatar`} />
 
-            <p className="character__name">{name}</p>
-            <p
-              className={`characters__status${
-                status === "Alive"
-                  ? " alive"
-                  : status === "Dead"
-                  ? " dead"
-                  : " unknown"
-              }`}
-            >
-              {status}
-            </p>
-            <p>{species}</p>
-            <p>{gender}</p>
-            <p>{origin.name}</p>
-          </Link>
-        </li>
-      );
-    });
+              <p className="character__name">{name}</p>
+              <p
+                className={`characters__status${
+                  status === "Alive"
+                    ? " alive"
+                    : status === "Dead"
+                    ? " dead"
+                    : " unknown"
+                }`}
+              >
+                {status}
+              </p>
+              <p>{species}</p>
+              <p>{gender}</p>
+              <p>{origin.name}</p>
+            </Link>
+          </li>
+        );
+      });
+  }
+
+  function saveNewFilter(newFilter) {
+    setFilter(newFilter);
   }
 
   return (
     <div className="characters__content">
-      <Input />
+      <Input saveNewFilter={saveNewFilter} />
 
       <ul>{renderCharacters()}</ul>
 

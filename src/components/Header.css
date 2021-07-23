@@ -1,0 +1,12 @@
+.app__header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.app__main {
+  padding: 80px;
+}

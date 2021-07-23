@@ -1,7 +1,4 @@
 .app__character-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  border: 1px solid black;
   padding: 15px;
-  gap: 1rem;
 }

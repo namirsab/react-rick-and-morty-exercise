@@ -23,6 +23,7 @@
   width: 100%;
   border-bottom: 1px solid black;
   gap: 1.5rem;
+  background-color: white;
 }
 
 .app__main {
@@ -33,4 +34,12 @@
 .app__nav-link {
   text-decoration: none;
   color: rgb(110, 110, 246);
+}
+
+.app__all-characters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
 }

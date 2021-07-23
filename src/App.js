@@ -23,7 +23,6 @@ function App() {
         <Switch>
           <Route path="/AllCharacters">
             <AllCharacters />
-            <CharacterCard />
           </Route>
           <Route path="/">
             <Home />

@@ -1,10 +1,10 @@
 import "./CharacterCard.css";
 
-export default function CharacterCard() {
+export default function CharacterCard({ character }) {
   return (
     <div className="app__character-card">
-      <p>CharacterCard</p> <p>CharacterCard</p> <p>CharacterCard</p>
-      <p>CharacterCard</p>
+      <img src={character.image} alt={character.name} />
+      <p>{character.name}</p>
     </div>
   );
 }

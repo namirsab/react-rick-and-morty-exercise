@@ -3,20 +3,26 @@ import { Link } from "react-router-dom";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
+  const [totalPages, setTotalPages] = useState();
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
-    const url = "https://rickandmortyapi.com/api/character";
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setCharacters(data.results));
-  }, []);
+      .then((data) => {
+        setCharacters((prevChar) => {
+          return [...prevChar, ...data.results];
+        });
+        setTotalPages(data.info.pages);
+      });
+  }, [page]);
 
-  //   function renderCharacters() {
-  //     if (characters) {
-  //       return characters.map((char) => {
-  //         return <p>{char.name}</p>;
-  //       });
-  //     }
-  //   }
+  function handleLoadMore() {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  }
 
   function renderCharacters() {
     return characters.map((char) => {
@@ -50,7 +56,11 @@ export default function Characters() {
   return (
     <div>
       <ul>{renderCharacters()}</ul>
+      <div className="button__div">
+        <button className="button__loadMore" onClick={handleLoadMore}>
+          Load More
+        </button>
+      </div>
     </div>
   );
 }
-// {characters && characters.map((char) => <li>{char.name}</li>)}

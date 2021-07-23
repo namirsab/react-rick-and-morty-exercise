@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
+import StatusSelect from "../components/StatusSelect";
 
 export default function Characters() {
   const [filter, setFilter] = useState("");
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState();
   const [page, setPage] = useState(1);
-
+  const [statusSearch, setStatusSearch] = useState("");
   useEffect(() => {
-    const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${filter}`;
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${filter}&?status=${statusSearch}`;
+    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -28,7 +30,9 @@ export default function Characters() {
 
   function renderCharacters() {
     return characters
+      .filter((status) => status.status.includes(statusSearch))
       .filter((name) => name.name.toLowerCase().includes(filter.toLowerCase()))
+
       .map((char) => {
         const { name, status, species, gender, origin, image, id } = char;
         return (
@@ -60,11 +64,14 @@ export default function Characters() {
   function saveNewFilter(newFilter) {
     setFilter(newFilter);
   }
+  function saveNewStatus(newStatus) {
+    setStatusSearch(newStatus);
+  }
 
   return (
     <div className="characters__content">
       <Input saveNewFilter={saveNewFilter} />
-
+      <StatusSelect saveNewStatus={saveNewStatus} />
       <ul>{renderCharacters()}</ul>
 
       <div className="button__div">

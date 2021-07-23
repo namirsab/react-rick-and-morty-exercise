@@ -1,12 +1,7 @@
 import Characters from "../pages/Characters";
 import Home from "../pages/Home";
 import SingleCharacter from "../pages/SingleCharacter";
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "./Main.css";
 
 export default function Main() {

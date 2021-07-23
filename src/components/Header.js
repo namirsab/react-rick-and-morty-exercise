@@ -4,8 +4,10 @@ export default function Header() {
   return (
     <header className="App-Header">
       <nav className="App-Header__Nav">
-        <img className="App-Header--Logo" src={randm} alt="Logo" />
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/">
+          <img className="App-Header--Logo" src={randm} alt="Logo" />
+        </NavLink>
+        <NavLink to="/home">Home</NavLink>
         <NavLink to="/characters">Characters</NavLink>
       </nav>
     </header>

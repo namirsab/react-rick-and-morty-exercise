@@ -1,8 +1,41 @@
 .App {
   height: 100vh;
   display: grid;
+  grid-template-rows: 10vh auto;
   place-items: center;
   color: #04b1c5;
   background-color: #111440;
-  font-size: 2em;
+  font-size: 1.6em;
+}
+
+.App-Header {
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+
+.App-Header__Nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.App-Header--Logo {
+  height: 40px;
+  padding-bottom: 0.5em;
+}
+
+.App-Header__Nav a {
+  text-decoration: none;
+  color: white;
+  gap: 2rem;
+}
+
+.App-Content {
+  padding: 1em;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.Home-Img {
+  height: 300px;
+  width: auto;
 }

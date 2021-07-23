@@ -17,6 +17,14 @@
   width: 90vw;
 }
 
+.characters__content {
+  width: fit-content;
+  margin: auto;
+}
+.characters__input {
+  width: fit-content;
+  margin: auto;
+}
 .character__liItem {
   border: 2px solid black;
   padding: 5%;

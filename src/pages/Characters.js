@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import Input from "../components/Input";
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState();
@@ -54,8 +54,11 @@ export default function Characters() {
   }
 
   return (
-    <div>
+    <div className="characters__content">
+      <Input />
+
       <ul>{renderCharacters()}</ul>
+
       <div className="button__div">
         <button className="button__loadMore" onClick={handleLoadMore}>
           Load More

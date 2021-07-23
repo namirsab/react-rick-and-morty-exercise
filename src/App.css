@@ -7,10 +7,5 @@
 }
 
 .App {
-  place-items: center;
-
-  display: grid;
-  grid-template-rows: 75px auto 75px;
   height: 100vh;
-  background-color: #04b1c5;
 }

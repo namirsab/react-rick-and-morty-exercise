@@ -20,10 +20,16 @@
 .character__liItem {
   border: 2px solid black;
   padding: 5%;
-  width: fit-content;
+  width: 300px;
+  text-align: center;
   margin: auto;
   list-style: none;
   background-color: wheat;
+}
+
+.character__name {
+  font-weight: bold;
+  text-decoration: underline;
 }
 .character__liItem img {
   width: 50vw;
@@ -31,6 +37,11 @@
 
 .character__liItem p {
   word-wrap: break-word;
+}
+
+.li__Link {
+  text-decoration: none;
+  color: black;
 }
 
 .alive {
@@ -41,4 +52,20 @@
 }
 .unknown {
   color: orange;
+}
+
+.singleChar__card {
+  border: 2px solid black;
+  padding: 5%;
+  width: fit-content;
+  margin: auto;
+  list-style: none;
+  background-color: wheat;
+}
+
+.singleChar__textBox {
+  background-color: blanchedalmond;
+  border: 2px solid whitesmoke;
+  padding: 1%;
+  font-weight: bold;
 }

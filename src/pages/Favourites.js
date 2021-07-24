@@ -15,6 +15,7 @@ export default function Favourites() {
               (t) => t.id === favourites.id && t.name === favourites.name
             )
         )
+
         .map((char) => (
           <div className="singleChar__card">
             <h2>{char.name}</h2>

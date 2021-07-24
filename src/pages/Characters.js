@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+
 import Input from "../components/Input";
 import StatusSelect from "../components/StatusSelect";
+
+import useLocalStorageState from "use-local-storage-state";
+import RenderCharacter from "../components/RenderCharacter";
 
 export default function Characters() {
   const [filter, setFilter] = useState("");
@@ -9,6 +12,9 @@ export default function Characters() {
   const [totalPages, setTotalPages] = useState();
   const [page, setPage] = useState(1);
   const [statusSearch, setStatusSearch] = useState("");
+
+  //   const [heartActive, setHeartActive] = useState(false);
+
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${filter}&?status=${statusSearch}`;
     console.log(url);
@@ -28,51 +34,24 @@ export default function Characters() {
     }
   }
 
-  function renderCharacters() {
-    return characters
-      .filter((status) => status.status.includes(statusSearch))
-      .filter((name) => name.name.toLowerCase().includes(filter.toLowerCase()))
-
-      .map((char) => {
-        const { name, status, species, gender, origin, image, id } = char;
-        return (
-          <li key={id} className="character__liItem">
-            <Link className="li__Link" to={`/characters/${id}`}>
-              <img src={image} alt={`${name} avatar`} />
-
-              <p className="character__name">{name}</p>
-              <p
-                className={`characters__status${
-                  status === "Alive"
-                    ? " alive"
-                    : status === "Dead"
-                    ? " dead"
-                    : " unknown"
-                }`}
-              >
-                {status}
-              </p>
-              <p>{species}</p>
-              <p>{gender}</p>
-              <p>{origin.name}</p>
-            </Link>
-          </li>
-        );
-      });
-  }
-
   function saveNewFilter(newFilter) {
     setFilter(newFilter);
   }
   function saveNewStatus(newStatus) {
     setStatusSearch(newStatus);
   }
-
+  console.log(Object.keys(characters));
   return (
     <div className="characters__content">
       <Input saveNewFilter={saveNewFilter} />
       <StatusSelect saveNewStatus={saveNewStatus} />
-      <ul>{renderCharacters()}</ul>
+      <ul>
+        <RenderCharacter
+          characters={characters}
+          filter={filter}
+          statusSearch={statusSearch}
+        />
+      </ul>
 
       <div className="button__div">
         <button className="button__loadMore" onClick={handleLoadMore}>

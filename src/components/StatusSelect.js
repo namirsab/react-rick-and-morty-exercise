@@ -7,7 +7,7 @@ export default function StatusSelect({ saveNewStatus }) {
     <div>
       <label htmlFor="status">Status: </label>
       <select onChange={handleStatusSearch} name="status" id="status">
-        <option value=""></option>
+        <option value="">All</option>
         <option value="Alive">"Alive"</option>
         <option value="Dead">"Dead"</option>
         <option value="unknown">"unknown"</option>

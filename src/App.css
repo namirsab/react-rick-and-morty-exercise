@@ -1,7 +1,14 @@
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   height: 100vh;
   display: grid;
-  grid-template-rows: 10vh auto;
+  grid-template-rows: 10vh auto 1vh;
   place-items: center;
   color: #04b1c5;
   background-color: #111440;
@@ -31,11 +38,18 @@
 
 .App-Content {
   padding: 1em;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; */
 }
 
 .Home-Img {
   height: 300px;
   width: auto;
+}
+
+.Character-Card {
+  list-style: none;
 }

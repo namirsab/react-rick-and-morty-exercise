@@ -2,7 +2,8 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Characters from "./pages/Characters";
+import CharactersList from "./pages/CharactersList";
+import SingleCharacterPage from "./pages/SingleCharacterPage";
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
       <Header />
       <main className="App-Content">
         <Switch>
+          <Route path="/character/:id">
+            <SingleCharacterPage />
+          </Route>
           <Route path="/characters">
-            <Characters />
+            <CharactersList />
           </Route>
           <Route path="/">
             <Home />

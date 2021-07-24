@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "../components/CharacterCard";
+import LoadMore from "../components/LoadMore";
 
 export default function AllCharacters() {
   const [allCharacters, setAllCharacters] = useState([]);
@@ -13,10 +14,13 @@ export default function AllCharacters() {
   }, []);
 
   return (
-    <div className="app__all-characters">
-      {allCharacters.map((character) => {
-        return <CharacterCard key={character.id} character={character} />;
-      })}
-    </div>
+    <>
+      <div className="app__all-characters">
+        {allCharacters.map((character) => {
+          return <CharacterCard key={character.id} character={character} />;
+        })}
+      </div>
+      <LoadMore />
+    </>
   );
 }

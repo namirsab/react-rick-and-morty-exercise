@@ -19,10 +19,10 @@ export default function RenderCharacter({
     .filter((status) => status.status.includes(statusSearch))
     .filter((name) => name.name.toLowerCase().includes(filter.toLowerCase()))
 
-    .map((char) => {
+    .map((char, index) => {
       const { name, status, species, gender, origin, image, id } = char;
       return (
-        <li key={id} className="character__liItem">
+        <li key={(id, index)} className="character__liItem">
           <Link className="li__Link" to={`/characters/${id}`}>
             <img src={image} alt={`${name} avatar`} />
 

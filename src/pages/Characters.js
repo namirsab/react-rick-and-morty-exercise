@@ -40,7 +40,7 @@ export default function Characters() {
   function saveNewStatus(newStatus) {
     setStatusSearch(newStatus);
   }
-  console.log(Object.keys(characters));
+
   return (
     <div className="characters__content">
       <Input saveNewFilter={saveNewFilter} />

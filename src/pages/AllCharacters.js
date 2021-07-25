@@ -4,14 +4,20 @@ import LoadMore from "../components/LoadMore";
 
 export default function AllCharacters() {
   const [allCharacters, setAllCharacters] = useState([]);
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
-    const url = `https://rickandmortyapi.com/api/character`;
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setAllCharacters(data.results);
+        setAllCharacters([...allCharacters, ...data.results]);
       });
-  }, []);
+  }, [page]);
+
+  function handleOnClick() {
+    setPage(page + 1);
+  }
 
   return (
     <>
@@ -20,7 +26,7 @@ export default function AllCharacters() {
           return <CharacterCard key={character.id} character={character} />;
         })}
       </div>
-      <LoadMore />
+      <LoadMore onClick={handleOnClick} />
     </>
   );
 }

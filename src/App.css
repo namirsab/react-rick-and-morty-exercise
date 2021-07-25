@@ -14,3 +14,32 @@
   margin: 0;
   padding: 0;
 }
+
+.app__nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid black;
+  gap: 1.5rem;
+  background-color: white;
+}
+
+.app__main {
+  padding: 90px;
+  text-align: center;
+}
+
+.app__nav-link {
+  text-decoration: none;
+  color: rgb(110, 110, 246);
+}
+
+.app__all-characters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}

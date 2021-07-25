@@ -4,7 +4,7 @@ export default function LoadMore({ onClick }) {
   return (
     <div className="app__load-more">
       <button className="app__load-more--button" onClick={onClick}>
-        More
+        Load More
       </button>
     </div>
   );

@@ -15,15 +15,16 @@
   padding: 0;
 }
 
-.app__nav {
+.app__header {
   display: flex;
-  justify-content: flex-end;
-  padding: 25px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 0 15px;
   position: fixed;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #fdfbc3;
   gap: 1.5rem;
-  background-color: white;
+  background-color: black;
 }
 
 .app__main {
@@ -31,9 +32,15 @@
   text-align: center;
 }
 
+.app__nav {
+  border: 3px dotted #6cb842;
+  padding: 15px;
+}
+
 .app__nav-link {
   text-decoration: none;
-  color: rgb(110, 110, 246);
+  padding: 15px;
+  color: #03afc7;
 }
 
 .app__all-characters {
@@ -42,4 +49,18 @@
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 2rem;
+}
+
+.app__img--header {
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+.app__home-img {
+  border: 1px solid black;
+}
+
+.active {
+  font-weight: bold;
+  color: #fdfbc3;
 }

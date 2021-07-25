@@ -20,10 +20,14 @@ export default function OneCharacter() {
     <div className="app__one-character-page--container">
       <div className="app__one-character-page">
         <p>{character?.name}</p>
-        <img src={character?.image} alt={character?.name} />
-        <p>{character?.status}</p> <p>{character?.gender}</p>{" "}
-        <p>{character?.species}</p>
-        <p>{character?.type}</p>
+        <img
+          className="app__one-character-img"
+          src={character?.image}
+          alt={character?.name}
+        />
+        <p>Status: {character?.status}</p> <p>Gender: {character?.gender}</p>{" "}
+        <p>Species: {character?.species}</p>
+        <p>Type: {character?.type ? character?.type : "x"}</p>
       </div>
     </div>
   );

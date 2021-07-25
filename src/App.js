@@ -2,27 +2,14 @@ import "./App.css";
 import Home from "./pages/Home";
 import AllCharacters from "./pages/AllCharacters";
 import OneCharacter from "./pages/OneCharacter";
-import {
-  Switch,
-  Route,
-  NavLink,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import Header from "./components/Header";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className="app__header">
-          <nav className="app__nav">
-            <NavLink className="app__nav-link" to="/">
-              Home
-            </NavLink>
-            <NavLink className="app__nav-link" to="/characters">
-              All characters
-            </NavLink>
-          </nav>
-        </header>
+        <Header />
         <main className="app__main">
           <Switch>
             <Route path="/character/:characterId">

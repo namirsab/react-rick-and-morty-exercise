@@ -1,4 +1,14 @@
 .app__character-card {
-  border: 1px solid black;
+  border: 1px solid white;
+  padding: 15px;
+}
+
+.app__character-link {
+  text-decoration: none;
+  color: #03afc7;
+}
+
+.app__character-img {
+  border: 3px double #6cb842;
   padding: 15px;
 }

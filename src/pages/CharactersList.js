@@ -18,15 +18,19 @@ export default function CharactersList() {
       const id = character.id;
 
       return (
-        <li key={id} className="Character-Card">
+        <section key={id} className="Character-card--wrapper">
           <Link to={`/character/${id}`}>
-            <img src={character.image} alt={character.name} />
-            {character.name}
+            <p>{character.name}</p>
           </Link>
-        </li>
+          <img
+            className="Character-Card__image"
+            src={character.image}
+            alt={character.name}
+          />
+        </section>
       );
     });
   }
 
-  return <ul>{renderCharacters()}</ul>;
+  return <div className="CharacterList__wrapper">{renderCharacters()}</div>;
 }
